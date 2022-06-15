@@ -10,11 +10,11 @@ port = process.env.PORT || process.argv[2] || 8080;
 
 // create a simple server
 const server = http.createServer(function (req, res) {
+        var query = url.parse(req.url,true).query;
         res.writeHead(200, {
             'Content-Type': 'text/plain'
         });
-        res.write('hello heroku!', 'utf-8');
-        var query = url.parse(req.url,true).query;
+        res.write('hello heroku by ' + query.id + ' from ' + req.headers['x-forwarded-for'], 'utf-8');
         console.log("id=" + query.id + ", ip=" + req.headers['x-forwarded-for']); 
         res.end();
     });
