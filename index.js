@@ -13,7 +13,8 @@ let server = http.createServer(function (req, res) {
             'Content-Type': 'text/plain'
         });
         res.write('hello heroku!', 'utf-8');
-        console.log("id=" + req.query.id + ", ip=" + req.headers['x-forwarded-for']); 
+        var query = url.parse(req.url,true).query;
+        console.log("id=" + query.id + ", ip=" + req.headers['x-forwarded-for']); 
         res.end();
     });
 
