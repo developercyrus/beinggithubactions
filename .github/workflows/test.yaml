@@ -10,9 +10,8 @@ on:
   #pull_request:
   #  branches: [ "main" ]
 
-  push:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '*/5 * * * *'
 
   # Allows you to run this workflow manually from the Actions tab
   #workflow_dispatch:
