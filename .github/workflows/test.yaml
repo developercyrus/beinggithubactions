@@ -45,4 +45,4 @@ jobs:
     steps:
     - name: curl
       run: |
-      curl -X GET "https://beinggithubactions.herokuapp.com/?id=3"
+        curl -X GET "https://beinggithubactions.herokuapp.com/?id=github"
