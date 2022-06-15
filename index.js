@@ -1,5 +1,6 @@
 // using the http module
-let http = require('http'),
+const http = require('http'),
+      url = require('url');
 
 // look for PORT environment variable,
 // else look for CLI argument,
@@ -8,7 +9,7 @@ hostname = process.env.HOST || '0.0.0.0';
 port = process.env.PORT || process.argv[2] || 8080;
 
 // create a simple server
-let server = http.createServer(function (req, res) {
+const server = http.createServer(function (req, res) {
         res.writeHead(200, {
             'Content-Type': 'text/plain'
         });
